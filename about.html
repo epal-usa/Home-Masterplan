@@ -1,0 +1,128 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable= no shrink-to-fit= no">
+    <title>Home Masterplane</title>
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="assets/imgs/fav.svg">
+    <!-- required css -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/fontawesome.min.css">
+    <link rel="stylesheet" href="assets/css/leaflet.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <!-- header -->
+    <nav class="header">
+        <div class="container d-flex align-items-center justify-content-between">
+            <div class="logo">
+                <a href="index.html"><img src="assets/imgs/logoH.svg"></a>
+            </div>
+            <div class="nav-links">
+                <ul>
+                    <li class="nav-link">
+                        <a class="home" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-link">
+                        <a class="features" href="index.html#features">Features</a>
+                    </li>
+                    <li class="nav-link">
+                        <a class="contact-us" href="index.html#contact-us">Contact us</a>
+                    </li>
+                    <li class="nav-link">
+                        <a class="about active" href="about.html">About Us</a>
+                    </li>
+                </ul>
+            </div>
+            <button class="btn toogler">
+                <i class="fa-sharp fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+    <!-- main-wrapper -->
+    <main class="content">
+        <div class="container">
+            <div class="flipBookRead"></div>
+        </div>
+    </main>
+    <!-- footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-12 flex-lg-row flex-column  d-flex justify-content-between align-items-center footer">
+                    <a class="logo" href="index.html">
+                        <img src="assets/imgs/fav.svg" alt="logo">
+                    </a>
+                    <div class="copy">
+                        <p>Copyright © 2023 Home Masterplane All rights reserved</p>
+                    </div>
+                    <ul class="social">
+                        <li>
+                            <a href="#!">
+                                <i class="fa-brands fa-facebook-f"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#!">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#!">
+                                <i class="fa-brands fa-twitter"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#!">
+                                <i class="fa-brands fa-linkedin-in"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/leaflet.js"></script>
+<!-- pdf -->
+<script src="PDF/js/three.min.js"></script>
+<script src="PDF/js/pdf.min.js"></script>
+<script src="PDF/js/3dflipbook.min.js"></script>
+<script type="text/javascript">
+    var template = {
+        html: 'PDF/default-book-view.html',
+        styles: [
+            'PDF/css/short-black-book-view.css'
+        ],
+        links: [
+            {
+                rel: 'stylesheet',
+                href: "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+            }
+        ],
+        sounds: {
+            startFlip: 'PDF/sound/start-flip.mp3',
+            endFlip: 'PDF/sound/end-flip.mp3'
+        },
+        script: 'PDF/js/default-book-view.js'
+    };
+    // Book 1 {
+    $('.flipBookRead').FlipBook({
+        pdf: 'PDF/masterplan.pdf',
+        template: template,
+        propertiesCallback: function (props) {
+            // props.rtl = true;
+            return props;
+        },
+    });
+    // }
+</script>
+<!-- app  -->
+<script src="assets/js/app.js"></script>
+
+
+</html>
